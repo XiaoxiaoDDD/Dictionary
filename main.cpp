@@ -1,7 +1,5 @@
 #include "dictionary.h"
 
-//class prototype
-class Enquiry(std::string input, std::vector<string> & dic);
 
 
 //read from the file and put the words into the vector
@@ -37,7 +35,7 @@ int main(){
 	std::string input;
 	std::cin >> input;
 
-	while (not input =="exit"){
+	while (input !="exit"){
 		Enquiry enquiry( input, dic );
 		std::cout <<"Please enter the word to search. Enter exit to quit the program."<<std::endl;
 		std::cin >> input;
