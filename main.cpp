@@ -1,7 +1,5 @@
 #include "dictionary.h"
 
-
-
 //read from the file and put the words into the vector
 std::vector<std::string> readDic(std::string dictionary_name){    //read the whole dictionary and put it into a dynamic array
 
@@ -12,8 +10,11 @@ std::vector<std::string> readDic(std::string dictionary_name){    //read the who
 
 	if (dic.is_open()){
 		while ( std::getline(dic, line)){
+			if(line[line.length() - 1] == '\r') {
+				line = line.substr(0, line.length() - 1);
+			}
 			word_list.push_back(line);
-			// std::cout << line <<std::endl;
+			// std::cout << line;
 		}
 		dic.close();
 	}
