@@ -31,14 +31,14 @@ int main(){
 
 	//int size = dic.size();
 
-	std::cout <<"Welcome to the dictionary. Please enter the word to search. Enter exit to quit the program."<<std::endl;
+	std::cout <<"Welcome to mySpeller. Please enter the word to search. Enter exit to quit the program."<<std::endl;
 
 	std::string input;
 	std::cin >> input;
 
 	while (input !="exit"){
 		Enquiry enquiry( input, dic );
-		std::cout <<"Please enter the word to search. Enter exit to quit the program."<<std::endl;
+		std::cout <<"Enter the word to search. Enter exit to quit the program."<<std::endl;
 		std::cin >> input;
 	}
 

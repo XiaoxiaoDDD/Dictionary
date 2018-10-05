@@ -15,12 +15,13 @@ private:
 	std::string input;
 	std::vector<std::string> & dictionary;
 	int size;
-	int count;
 
 public:
 	Enquiry(std::string, std::vector<std::string> &);
-	int complete_search();
-	int quesiton_mark();
+	std::pair<char, int> pre_process();
+	void myspeller (char, int);
+	int binary_search(int &);
+	int lower_bound_search (int &, int);
 
 	~Enquiry();
 };
