@@ -20,8 +20,9 @@ public:
 	Enquiry(std::string, std::vector<std::string> &);
 	std::pair<char, int> pre_process();
 	void myspeller (char, int);
-	int binary_search(int &);
-	int lower_bound_search (int &, int);
+	void complete_search(int &, int &, std::vector<std::string *>&);
+	void wildcard_search (int &, int &, std::vector<std::string *>&, int);
+
 
 	~Enquiry();
 };
