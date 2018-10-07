@@ -1,7 +1,8 @@
 #include "dictionary.h"
+#include <stdlib.h>
 
 //read from the file and put the words into the vector
-std::vector<std::string> readDic(std::string dictionary_name){    //read the whole dictionary and put it into a dynamic array
+std::vector<std::string> readDic(char * dictionary_name){    //read the whole dictionary and put it into a dynamic array
 
 	std::vector<std::string> word_list;
 	std::string line;
@@ -22,12 +23,32 @@ std::vector<std::string> readDic(std::string dictionary_name){    //read the who
 	return word_list;
 }
 
-int main(){
+int main(int argc, char * argv[]){
 
 	// std::cout <<"start \n";
 
+	char * dictionary_name;
+	dictionary_name = "default";
+	int limit;
+	limit = -1;
+
+
+	for (int i = 0; i < argc; i++){
+		if (strcmp(argv[i],"-d")==0){
+			dictionary_name = argv[++i];
+		}
+		else if (strcmp(argv[i],"-l")==0){
+			limit = atoi(argv[++i]);
+		}
+	}
+
+	if (dictionary_name =="default" || limit == -1){
+		std::cout <<"mymachine-promt >> ./myspeller -d <dictionary> -l <numofwordsinoutput>"<<std::endl;
+		return EXIT_FAILURE;
+	}
+
 	std::vector<std::string> dic;
-	dic=readDic("Dictionary141words.txt");
+	dic=readDic(dictionary_name);
 
 	//int size = dic.size();
 
@@ -37,7 +58,7 @@ int main(){
 	std::cin >> input;
 
 	while (input !="exit"){
-		Enquiry enquiry( input, dic );
+		Enquiry enquiry( input, dic, limit );
 		std::cout <<"Enter the word to search. Enter exit to quit the program."<<std::endl;
 		std::cin >> input;
 	}

@@ -2,8 +2,8 @@
 
 using namespace std;
 
-Enquiry::Enquiry(std::string input, std::vector<std::string> & dic)
-		:input(input), dictionary(dic), n_word_found(0), n_comparison(0){
+Enquiry::Enquiry(std::string input, std::vector<std::string> & dic, int limit)
+		:input(input), dictionary(dic),limit(limit), n_word_found(0), n_comparison(0){
 		size = dictionary.size();
 
 		std::pair<char, int> instruction = pre_process(); //determine the type of enquiry: complete word, wildcard, or ?
@@ -50,7 +50,7 @@ void Enquiry::myspeller(char c, int p){  //c is the enquiry type, p is the posit
 
 	std::cout << n_word_found <<" words found:"<<std::endl;
 
-	for (int i = 0; i < n_word_found; i++){
+	for (int i = 0; i < n_word_found && i < limit; i++){
 		std::cout << * result_list[i] <<std::endl;
 	}
 

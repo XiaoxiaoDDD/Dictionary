@@ -13,6 +13,7 @@ void Enquiry::incomplete_search(std::vector<std::string*> & result_list, int p, 
 
 
 	if (c == '?'){
+
 		int len;
 		len = input.length();
 

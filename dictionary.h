@@ -16,9 +16,10 @@ private:
 	int size;
 	int n_comparison;
 	int n_word_found;
+	int limit;
 
 public:
-	Enquiry(std::string, std::vector<std::string> &);
+	Enquiry(std::string, std::vector<std::string> &, int);
 	std::pair<char, int> pre_process();
 	void myspeller (char, int);
 	void binary_search( std::vector<std::string *>&);
