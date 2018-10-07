@@ -13,13 +13,13 @@ Enquiry::Enquiry(std::string input, std::vector<std::string> & dic, int limit)
 
 // pre_prosess identifies the type of the enquiry and the position of * and ?
 std::pair<char, int> Enquiry::pre_process() {
-	for (int i = 0; i < size; i++){
+	for (int i = 0; i < input.size(); i++){
 		if (input[i] == '*'){
 			std::pair<char,int> p('*', i);
 			std::cout <<"wildcard"<<std::endl;
 			return p;
 		}
-		if (input[i] == '?'){
+		else if (input[i] == '?'){
 			std::pair<char,int> p('?', i);
 			std::cout <<"question" <<std::endl;
 			return p;

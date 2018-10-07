@@ -26,7 +26,7 @@ public:
 	//void wildcard_search ( std::vector<std::string *>&, int, char &);
 	void incomplete_search( std::vector<std::string *>&, int, char &);
 	void find_first_occurance(int & , int & );
-	void find_last_occurance(int & , int & );
+	//void find_last_occurance(int & , int & );
 
 
 	~Enquiry();

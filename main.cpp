@@ -19,6 +19,9 @@ std::vector<std::string> readDic(char * dictionary_name){    //read the whole di
 		}
 		dic.close();
 	}
+	else{
+		std::cout <<"the dictionay does not exist"<<std::endl;
+	}
 	
 	return word_list;
 }
