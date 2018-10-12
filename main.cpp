@@ -46,12 +46,16 @@ int main(int argc, char * argv[]){
 	}
 
 	if (dictionary_name =="default" || limit == -1){
-		std::cout <<"mymachine-promt >> ./myspeller -d <dictionary> -l <numofwordsinoutput>"<<std::endl;
+		std::cout <<"Sample prompt: mymachine-promt >> ./myspeller -d <dictionary> -l <numofwordsinoutput>"<<std::endl;
 		return EXIT_FAILURE;
 	}
 
 	std::vector<std::string> dic;
 	dic=readDic(dictionary_name);
+	if (dic.empty()) {
+		std::cout <<"Sample prompt: mymachine-promt >> ./myspeller -d <dictionary> -l <numofwordsinoutput>"<<std::endl;
+		return EXIT_FAILURE;
+	}
 
 	//int size = dic.size();
 
